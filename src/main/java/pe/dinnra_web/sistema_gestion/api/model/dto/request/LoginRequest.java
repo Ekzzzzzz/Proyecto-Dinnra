@@ -1,0 +1,21 @@
+package pe.dinnra_web.sistema_gestion.api.model.dto.request;
+
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@Builder
+public class LoginRequest {
+
+    @NotBlank(message = "El campo es requerido")
+    @Email(message = "Ingrese un email valido")
+    private String username;
+
+    @NotBlank(message = "La contraseña no puede estar vacía")
+    private String password;
+}
